@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jornada Viagens - Chatbot</title>
-    <link rel="stylesheet" href="/static/css/app.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jornada Viagens - Chatbot</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
 </head>
-
 <body>
-    <header class="cabecalho container">
-        <img src="/static/img/logo.png" alt="Logo Chatbot">
+  <header class="cabecalho container">
+    <img src="/static/img/logo.png" alt="Logo Jornada Viagens" />
+    <div class="cabecalho__acoes">
+      <a href="#" id="botao-limpar-conversa">Limpar Conversa</a>
+    </div>
+  </header>
 
-        <div class="cabecalho__acoes">
-            <a href="#" id="botao-limpar-conversa">Limpar Conversa</a>
-        </div>
-    </header>
+  <main class="main">
+    <section class="chat container" id="chat" aria-live="polite" aria-busy="false">
+      <p class="chat__bolha chat__bolha--bot">
+        Olá! Eu sou o assistente virtual do Jornada Viagens 🌍<br/><br/>
+        Como posso te ajudar?
+      </p>
 
-    <main class="main">
-        <section class="chat container" id="chat">
-            <p class="chat__bolha chat__bolha--bot">
-                Olá! Eu sou o assistente virtual do Jornada Viagens ~<br/><br/>
-                Como posso te ajudar?
-            </p>
-        </section>
-        <section class="entrada container">
-            <div class="entrada__container">
-                <input type="text" class="entrada__input" placeholder="Enviar uma mensagem" id="input">
-                <button aria-label="Botão de enviar" id="botao-enviar">
-                    <i class="icone icone--enviar-mensagem"></i>
-                </button>
-            </div>
-        </section>
-    </main>
+      <!-- Sugestões rápidas -->
+      <div class="sugestoes" id="sugestoes">
+        <button class="chip" data-msg="Meu nome é Ana">Meu nome é Ana</button>
+        <button class="chip" data-msg="Quero ir para Paris">Quero ir para Paris</button>
+        <button class="chip" data-msg="Meu orçamento é R$ 6.000">Orçamento: R$ 6.000</button>
+        <button class="chip" data-msg="Pretendo ficar 7 dias">7 dias</button>
+      </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="/static/js/app.js"></script>
+      <!-- Indicador de digitação -->
+      <div id="typing" class="typing" hidden>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="typing__label">Jordi está digitando…</span>
+      </div>
+    </section>
+
+    <section class="entrada container">
+      <div class="entrada__container">
+        <textarea
+          id="input"
+          class="entrada__input"
+          placeholder="Escreva sua mensagem (Enter envia • Shift+Enter quebra linha)"
+          rows="2"
+        ></textarea>
+        <button aria-label="Enviar mensagem" id="botao-enviar">
+          <i class="icone icone--enviar-mensagem"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/static/js/app.js"></script>
 </body>
-
 </html>
