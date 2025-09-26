@@ -94,7 +94,7 @@ http://localhost:3000
 * Loader animado para indicar resposta do bot.
 * Scroll automático sempre para o final da conversa.
 
-> 💡 Adicione prints do chat aqui para valorizar no portfólio.
+
 
 ---
 
@@ -127,3 +127,4 @@ Projeto criado para fins educacionais e de portfólio. Você pode usar e adaptar
 ---
 
 👨‍💻 **Autor**: [Eduardo bressan ](https://github.com/Bressan1)
+
